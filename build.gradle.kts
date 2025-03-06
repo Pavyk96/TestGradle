@@ -19,9 +19,15 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
+	implementation("org.projectlombok:lombok")
+
+	annotationProcessor("org.projectlombok:lombok")
+
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	testImplementation("org.projectlombok:lombok")
+	testAnnotationProcessor("org.projectlombok:lombok")
 }
+
 
 tasks.withType<Test> {
 	useJUnitPlatform()
