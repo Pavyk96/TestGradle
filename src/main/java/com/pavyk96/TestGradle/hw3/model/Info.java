@@ -6,7 +6,6 @@ import lombok.Data;
 
 import java.sql.Timestamp;
 
-@Builder
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Info {
