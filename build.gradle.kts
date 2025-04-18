@@ -19,8 +19,18 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+	// Spring Data JPA + PostgreSQL драйвер
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	implementation("org.postgresql:postgresql:42.7.3")  // или актуальная версия
+
+	implementation("org.springframework.boot:spring-boot-starter-web")
+
+	// Lombok (для сокращения boilerplate-кода, опционально)
+	compileOnly("org.projectlombok:lombok")
+	annotationProcessor("org.projectlombok:lombok")
+
+
 }
 
 tasks.withType<Test> {
