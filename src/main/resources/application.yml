@@ -1,3 +1,6 @@
+api:
+  max-requests: 5
+
 spring:
   autoconfigure:
     exclude:
