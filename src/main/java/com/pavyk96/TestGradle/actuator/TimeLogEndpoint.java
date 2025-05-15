@@ -2,6 +2,7 @@ package com.pavyk96.TestGradle.actuator;
 
 import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
@@ -11,10 +12,10 @@ import java.time.LocalDateTime;
 public class TimeLogEndpoint {
 
     @ReadOperation
-    public String logTime() {
+    public ResponseEntity<Void> logTime() {
         String message = "Вызов актуатора: " + LocalDateTime.now();
         System.out.println(message);
-        return message;
+        return ResponseEntity.ok().build();
     }
 }
 

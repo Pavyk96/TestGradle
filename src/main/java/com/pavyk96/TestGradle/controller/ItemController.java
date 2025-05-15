@@ -12,8 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class ItemController {
     private final ItemService service;
 
-    @PostMapping("/api/{itemId}")
-    public String getOrder(@PathVariable String itemId) {
-        return service.getOrder(itemId);
+    @PostMapping("/api/orders/{itemId}")
+    public ResponseEntity<String> createOrder(@PathVariable String itemId) {
+        String result = service.createOrder(itemId);
+        return ResponseEntity.ok(result);
     }
 }
