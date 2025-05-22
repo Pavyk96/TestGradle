@@ -1,0 +1,13 @@
+api:
+  max-requests: 5
+
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration
+      - org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+  logging:
+    level:
+      org.springframework.web: INFO
+  server:
+    port: 8080
